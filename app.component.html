@@ -1,0 +1,19 @@
+<div class="box">
+  <h1>{{title}}</h1>
+  <div class="input">
+    <label for="">Enter Product Name: </label>
+    <input type="text" name="productName" id="productName" placeholder="Enter product name" #name class="font" />
+    <br><br>
+    <label for="">Enter quantity: </label>
+    <input type="number" name="quantity" id="quantity" placeholder="Enter quantity" #quantity class="font" /> <br><br>
+    <button class="add-btn" (click)="addItems(name.value,quantity.value)">Add new Item</button>
+  </div>
+
+  <div class="container">
+    <p>List Of Items</p>
+    <ul *ngFor="let item of list">
+      <li class="item">Item Name:{{item.name}} &nbsp; Quantity:{{item.quantity}} <br><button (click)="remove(item.id)" class="re-btn">Remove</button></li>
+    </ul>
+  </div>
+</div>
+<router-outlet></router-outlet>
